@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const hbs = require('hbs');
+const port = process.env.PORT || 8000;
 
 const staticPath = path.join(__dirname, "../public")
 const temp_path = path.join(__dirname, "../templates/views")
@@ -30,6 +31,6 @@ app.get('*', (req, res) => {
   res.render("404");
 });
 
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log("Listening");
 })
